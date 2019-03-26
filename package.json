@@ -1,6 +1,6 @@
 {
   "name": "svgr-component-generator",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "flow": "flow check",
     "clean": "rimraf lib",
     "flowbuild": "flow-copy-source src lib",
-    "prebuild": "npm run docs && npm run clean && npm run flowbuild",
+    "prebuild": "npm run clean && npm run flowbuild",
     "build": "babel src -d lib",
     "preversion": "npm run lint && npm test && npm run build",
     "version": "standard-changelog && git add CHANGELOG.md",
@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/andrius-skucas-db/svgr-component-generator#readme",
   "bin": {
-    "dosomethingawesome": "./bin/demo-global.js"
+    "svgr-generate-comopnents": "./bin/index.js"
   },
   "husky": {
     "hooks": {
@@ -41,7 +41,10 @@
       "git add"
     ]
   },
-  "dependencies": {},
+  "dependencies": {
+    "minimist": "^1.2.0",
+    "pino": "^5.11.3"
+  },
   "devDependencies": {
     "@babel/cli": "7.2.3",
     "@babel/core": "7.4.0",
