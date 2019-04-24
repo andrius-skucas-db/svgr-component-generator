@@ -3,14 +3,23 @@ import { writeFile } from "fs";
 import convertNameToComponentName from "./convertNameToComponentName";
 import getFileTemplate from "../templates/getFileTemplate";
 
-const createComponentFile = (directory, directoryName, iconsInFolder) => {
+const createComponentFile = (
+  directory,
+  directoryName,
+  iconsInFolder,
+  fileType
+) => {
   const mainComponentName = convertNameToComponentName(directoryName);
 
   console.log(`-- Creating component "${mainComponentName}"`);
 
-  const filePath = join(directory, `${mainComponentName}.js`);
+  const filePath = join(directory, `${mainComponentName}.${fileType}`);
 
-  const fileContent = getFileTemplate(mainComponentName, iconsInFolder);
+  const fileContent = getFileTemplate(
+    mainComponentName,
+    iconsInFolder,
+    fileType
+  );
 
   writeFile(filePath, fileContent, err => {
     if (err) {

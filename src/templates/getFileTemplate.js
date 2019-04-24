@@ -7,14 +7,14 @@ import ${file.componentName} from './${file.name}';`;
 
 const generateMap = files => {
   return files.reduce((accumulator, file) => {
-    return `${accumulator}
+    return `${accumulator}${accumulator ? "," : ""}
   ['${file.componentName}', ${file.componentName}]`;
   }, ``);
 };
 
 const generatePropTypes = files => {
   return files.reduce((accumulator, file) => {
-    return `${accumulator},
+    return `${accumulator}${accumulator ? "," : ""}
     '${file.componentName}'`;
   }, ``);
 };
@@ -35,7 +35,8 @@ const ${componentName} = ({ icon, ...rest}) => {
 };
 
 ${componentName}.propTypes = {
-  icon: PropTypes.oneOf([${generatePropTypes(filesToInclude)}])
+  icon: PropTypes.oneOf([${generatePropTypes(filesToInclude)}
+  ])
 };
 
 export default ${componentName};

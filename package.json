@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/andrius-skucas-db/svgr-component-generator#readme",
   "bin": {
-    "svgr-generate-components": "./bin/index.js"
+    "svgr-generate-components": "./external/index.js"
   },
   "husky": {
     "hooks": {

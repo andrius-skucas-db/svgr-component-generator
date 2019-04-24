@@ -7,7 +7,8 @@ const args = minimist(process.argv.slice(2));
 
 const config = {
   source: args.source || "./",
-  dist: args.dist
+  dist: args.dist,
+  fileType: args.fileType || "js"
 };
 
 generateComponents(config);

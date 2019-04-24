@@ -9,7 +9,12 @@ const createReactComponent = (directory, config) => {
   );
   if (filesInDir.length) {
     const distDirectory = config.dist || directory.path;
-    createComponentFile(distDirectory, directory.name, filesInDir);
+    createComponentFile(
+      distDirectory,
+      directory.name,
+      filesInDir,
+      config.fileType
+    );
   }
 
   console.info(
