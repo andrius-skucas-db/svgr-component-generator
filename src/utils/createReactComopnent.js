@@ -1,12 +1,10 @@
 import getFilesAndDirectoriesInPath from "./getFilesAndRirectoriesInPath";
 import createComponentFile from "./createComponentFile";
 
-const logger = require("pino")();
-
 const createReactComponent = (directory, config) => {
   const { filesInDir, dirsInDir } = getFilesAndDirectoriesInPath(directory);
 
-  logger.info(
+  console.info(
     `- Found ${filesInDir.length} SVG files in folder "${directory.name}".`
   );
   if (filesInDir.length) {
@@ -14,12 +12,13 @@ const createReactComponent = (directory, config) => {
     createComponentFile(distDirectory, directory.name, filesInDir);
   }
 
-  logger.info(
+  console.info(
     `- Found ${dirsInDir.length} directories in folder "${directory.name}".`
   );
   dirsInDir.forEach(singleDirectory =>
     createReactComponent(singleDirectory, config)
   );
+  console.log("---------------------------------------");
 };
 
 export default createReactComponent;

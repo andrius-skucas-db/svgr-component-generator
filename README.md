@@ -10,12 +10,12 @@ In order to use this utility you have to:
 * Clone this repo (`git clone https://github.com/andrius-skucas-db/svgr-component-generator.git`)
 * Go into repository directory (`cd svgr-component-generator`)
 * run `npm install`
-* run `npm build`
+* run `npm run build`
 * run `npm link`
-* then go to project icons directory and run `svgr-generate-comopnents`
+* then go to project icons directory and run `svgr-generate-components`
 
 ### What it does?
-When running `svgr-generate-comopnents` command. This tools check current directory (and sub directories) for folders that 
+When running `svgr-generate-components` command. This tools check current directory (and sub directories) for folders that 
 contain .svg files.
 When tool find folder with svg files in them it creates React component in the same folder
 which imports all .svg files that are in that folder and lets user to use that component for inserting icons more easily;
@@ -47,5 +47,4 @@ Icons
     │   menu-icon-2.svg
 ```
 
-Note that scrip only creates component for subfolder (it assumes that icons inside folders are the ones that needs to be grouped)
-
+Note that script only creates component for subfolder (it assumes that icons inside folders are the ones that needs to be grouped)

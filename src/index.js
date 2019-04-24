@@ -3,13 +3,11 @@ import isConfigValid from "./utils/isConfigValid";
 import getDirectories from "./utils/getDirectories";
 import createReactComponent from "./utils/createReactComopnent";
 
-const logger = require("pino")();
-
 const createReactComponents = (config: Object = {}) => {
   try {
     isConfigValid(config);
   } catch (e) {
-    logger.error(e);
+    console.error(e);
     return;
   }
 
@@ -18,7 +16,7 @@ const createReactComponents = (config: Object = {}) => {
   const directories = getDirectories(source);
 
   if (!directories) {
-    logger.error("No directories found in source.");
+    console.error("No directories found in source.");
     return;
   }
 

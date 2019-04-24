@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/andrius-skucas-db/svgr-component-generator#readme",
   "bin": {
-    "svgr-generate-comopnents": "./bin/index.js"
+    "svgr-generate-components": "./bin/index.js"
   },
   "husky": {
     "hooks": {
@@ -42,8 +42,7 @@
     ]
   },
   "dependencies": {
-    "minimist": "^1.2.0",
-    "pino": "^5.11.3"
+    "minimist": "^1.2.0"
   },
   "devDependencies": {
     "@babel/cli": "7.2.3",
