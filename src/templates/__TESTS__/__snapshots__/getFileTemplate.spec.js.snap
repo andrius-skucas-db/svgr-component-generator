@@ -1,15 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`getFileTemplate getFileTemplate 1`] = `
-"
-import React from 'react';
+"import React from 'react';
 import PropTypes from 'prop-types';    
 
 import Icon from './icon.svg';
 import Icon2 from './icon-2.svg';
     
 const iconsMap = new Map([
-  ['Icon', Icon]
+  ['Icon', Icon],
   ['Icon2', Icon2]
 ]);
     
@@ -20,9 +19,10 @@ const IconComponent = ({ icon, ...rest}) => {
 };
 
 IconComponent.propTypes = {
-  icon: PropTypes.oneOf([,
+  icon: PropTypes.oneOf([
     'Icon',
-    'Icon2'])
+    'Icon2'
+  ])
 };
 
 export default IconComponent;

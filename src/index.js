@@ -7,7 +7,7 @@ const createReactComponents = (config: Object = {}) => {
   try {
     isConfigValid(config);
   } catch (e) {
-    console.error(e);
+    console.error(e.name, e.message);
     return;
   }
 

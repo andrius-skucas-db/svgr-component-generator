@@ -1,7 +1,7 @@
 import getFilesAndDirectoriesInPath from "./getFilesAndRirectoriesInPath";
 import createComponentFile from "./createComponentFile";
 
-const createReactComponent = (directory, config) => {
+const createReactComponent = (directory, config, depth = 0) => {
   const { filesInDir, dirsInDir } = getFilesAndDirectoriesInPath(directory);
 
   console.info(
@@ -20,9 +20,11 @@ const createReactComponent = (directory, config) => {
   console.info(
     `- Found ${dirsInDir.length} directories in folder "${directory.name}".`
   );
-  dirsInDir.forEach(singleDirectory =>
-    createReactComponent(singleDirectory, config)
-  );
+  if (depth < config.maxDirectoryDepth) {
+    dirsInDir.forEach(singleDirectory =>
+      createReactComponent(singleDirectory, config, depth + 1)
+    );
+  }
   console.log("---------------------------------------");
 };
 

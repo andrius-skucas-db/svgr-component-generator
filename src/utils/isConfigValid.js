@@ -12,7 +12,7 @@ const isConfigValid = config => {
 
   if (config.fileType && !allowedExtensions.includes(config.fileType)) {
     throw new ConfigException(
-      "Invalid file type. File types can be: js, jsx or ts"
+      `Invalid file type. File types can be: ${allowedExtensions.join(", ")}`
     );
   }
 };

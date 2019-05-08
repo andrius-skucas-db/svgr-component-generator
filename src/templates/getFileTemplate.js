@@ -20,8 +20,7 @@ const generatePropTypes = files => {
 };
 
 const getFileTemplate = (componentName, filesToInclude) => {
-  return `
-import React from 'react';
+  return `import React from 'react';
 import PropTypes from 'prop-types';    
 ${generateImports(filesToInclude)}
     
