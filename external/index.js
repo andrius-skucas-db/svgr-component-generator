@@ -5,6 +5,23 @@ const generateComponents = require("../lib/index.js").default;
 
 const args = minimist(process.argv.slice(2));
 
+const knownArgs = [
+  "source",
+  "dist",
+  "fileType",
+  "maxDirectoryDepth",
+  "help",
+  "_"
+];
+
+const filteredArgs = Object.keys(args).filter(arg => !knownArgs.includes(arg));
+
+if (filteredArgs.length) {
+  console.error(`Unspecified arguments: ${filteredArgs.join(", ")}. 
+  Try running "svgr-generate-components --help" for more details.`);
+  return;
+}
+
 if (args.help) {
   console.table([
     {
